@@ -87,11 +87,11 @@ theme: yilia
 deploy:
   type: git
   message: hexo deploy to git for master 
-  repo: git@git.dev.tencent.com:taogejiang_study/blog.git
-  branch: public
+  repo: 
+  #branch: public
     #github: <repository url>,[branch]
     #coding: https://git.dev.tencent.com/taogejiang_study/blog.git,master ### 此种设置部署时需要提供用户名和密码
-    #coding: git@git.dev.tencent.com:taogejiang_study/blog.git,public ###此种设置可免密,public分支作为静态页面的部署分支
+    coding: git@git.dev.tencent.com:taogejiang_study/blog.git,master ###此种设置可免密,public分支作为静态页面的部署分支
 
 #我的文章设置
 jsonContent:
