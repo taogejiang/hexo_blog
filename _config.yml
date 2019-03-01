@@ -17,7 +17,7 @@ url: http://vwggod.coding.io
 root: /
 #url: http://taogejiang_study.coding.me/blog
 #root: /blog/
-permalink: :year-:month-:day-:title
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
