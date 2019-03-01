@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://vwggod.coding.io">
-  <title>Hello Hexo | 路漫漫其修远兮，吾将上下而求索！</title>
+  <title>优秀博文收藏 | 路漫漫其修远兮，吾将上下而求索！</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
+<meta name="keywords" content="blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello Hexo">
-<meta property="og:url" content="http://vwggod.coding.io/2019-02-05-hello-hexo-">
+<meta property="og:title" content="优秀博文收藏">
+<meta property="og:url" content="http://vwggod.coding.io/2019-02-07-blog-collection">
 <meta property="og:site_name" content="路漫漫其修远兮，吾将上下而求索！">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2019-02-13T07:13:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Hexo">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="优秀博文收藏">
+<meta name="twitter:description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -161,24 +161,24 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hello-hexo" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-blog-collection" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello Hexo
+      优秀博文收藏
     </h1>
   
 
         
-        <a href="/2019-02-05-hello-hexo-" class="archive-article-date">
-		<time datetime="2019-02-05T09:14:04.000Z" itemprop="datePublished">
+        <a href="/2019-02-07-blog-collection" class="archive-article-date">
+		<time datetime="2019-02-07T09:14:04.000Z" itemprop="datePublished">
   		<i class="icon-calendar icon"></i>
   		
   		
-  		2019-02-05
+  		2019-02-07
   		
   	</time>
 </a>
@@ -187,15 +187,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <table>
+<thead>
+<tr>
+<th style="text-align:left">分类</th>
+<th style="text-align:left">链接</th>
+<th style="text-align:left">简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">知识体系</td>
+<td style="text-align:left"><a href="http://www.woshipm.com/zhichang/1048958.html" target="_blank" rel="noopener">如何建立知识体系？&#124; 你是学习知识，不是做知识的搬运工</a></td>
+<td style="text-align:left">思维逻辑是首位</td>
+</tr>
+<tr>
+<td style="text-align:left">markdown</td>
+<td style="text-align:left"><a href="https://www.jianshu.com/p/55b9ce58bf6c" target="_blank" rel="noopener">markdown表格不能转义”&#124;”解决办法</a></td>
+<td style="text-align:left">使用html字符直义</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo</td>
+<td style="text-align:left"><a href="https://blog.csdn.net/q2158798/article/details/82354154" target="_blank" rel="noopener">hexo博客常用插件及教程</a></td>
+<td style="text-align:left">基本插件实现</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -230,7 +247,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
         		</li>
       		
 		</ul>
@@ -242,7 +259,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
+        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
         		</li>
       		
 		</ul>
@@ -297,7 +314,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://bshare.optimix.asia/barCode?site=weixin&url=http://vwggod.coding.io/2019-02-05-hello-hexo-" alt="微信分享二维码">
+      <img src="http://bshare.optimix.asia/barCode?site=weixin&url=http://vwggod.coding.io/2019-02-07-blog-collection" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,15 +328,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019-02-06-my-hexo-" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019-02-07-cmd" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo博客搭建全过程
+          常用命令集
         
       </div>
     </a>
   
+  
+    <a href="/2019-02-07-about-me" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">工作8年的自我认知</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -344,7 +366,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -445,15 +467,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yaml</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
               </li>
              
               <li class="article-tag-list-item">

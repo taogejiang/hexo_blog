@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://vwggod.coding.io">
-  <title>优秀博文收藏 | 路漫漫其修远兮，吾将上下而求索！</title>
+  <title>常用命令集 | 路漫漫其修远兮，吾将上下而求索！</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
-<meta name="keywords" content="blog">
+  <meta name="description" content="Linux 常用命令集 查看磁盘空间 df -ha 查看端口占用情况 netstat -tlnp | grep 4000，其中p参数会显示进程id，可以直接kill -9 ${pid}即可释放端口资源">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="优秀博文收藏">
-<meta property="og:url" content="http://vwggod.coding.io/2019-02-07-blog-collection-">
+<meta property="og:title" content="常用命令集">
+<meta property="og:url" content="http://vwggod.coding.io/2019-02-07-cmd">
 <meta property="og:site_name" content="路漫漫其修远兮，吾将上下而求索！">
-<meta property="og:description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
+<meta property="og:description" content="Linux 常用命令集 查看磁盘空间 df -ha 查看端口占用情况 netstat -tlnp | grep 4000，其中p参数会显示进程id，可以直接kill -9 ${pid}即可释放端口资源">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2019-02-13T07:13:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="优秀博文收藏">
-<meta name="twitter:description" content="分类 链接 简介     知识体系 如何建立知识体系？&amp;#124; 你是学习知识，不是做知识的搬运工 思维逻辑是首位   markdown markdown表格不能转义”&amp;#124;”解决办法 使用html字符直义   hexo hexo博客常用插件及教程 基本插件实现">
+<meta name="twitter:title" content="常用命令集">
+<meta name="twitter:description" content="Linux 常用命令集 查看磁盘空间 df -ha 查看端口占用情况 netstat -tlnp | grep 4000，其中p参数会显示进程id，可以直接kill -9 ${pid}即可释放端口资源">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -161,20 +161,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-blog-collection" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-cmd" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      优秀博文收藏
+      常用命令集
     </h1>
   
 
         
-        <a href="/2019-02-07-blog-collection-" class="archive-article-date">
-		<time datetime="2019-02-07T09:14:04.000Z" itemprop="datePublished">
+        <a href="/2019-02-07-cmd" class="archive-article-date">
+		<time datetime="2019-02-07T15:01:46.000Z" itemprop="datePublished">
   		<i class="icon-calendar icon"></i>
   		
   		
@@ -187,32 +187,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <table>
-<thead>
-<tr>
-<th style="text-align:left">分类</th>
-<th style="text-align:left">链接</th>
-<th style="text-align:left">简介</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">知识体系</td>
-<td style="text-align:left"><a href="http://www.woshipm.com/zhichang/1048958.html" target="_blank" rel="noopener">如何建立知识体系？&#124; 你是学习知识，不是做知识的搬运工</a></td>
-<td style="text-align:left">思维逻辑是首位</td>
-</tr>
-<tr>
-<td style="text-align:left">markdown</td>
-<td style="text-align:left"><a href="https://www.jianshu.com/p/55b9ce58bf6c" target="_blank" rel="noopener">markdown表格不能转义”&#124;”解决办法</a></td>
-<td style="text-align:left">使用html字符直义</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo</td>
-<td style="text-align:left"><a href="https://blog.csdn.net/q2158798/article/details/82354154" target="_blank" rel="noopener">hexo博客常用插件及教程</a></td>
-<td style="text-align:left">基本插件实现</td>
-</tr>
-</tbody>
-</table>
+        <h2 id="Linux-常用命令集"><a href="#Linux-常用命令集" class="headerlink" title="Linux 常用命令集"></a>Linux 常用命令集</h2><ul>
+<li>查看磁盘空间 <code>df -ha</code></li>
+<li>查看端口占用情况 <code>netstat -tlnp | grep 4000</code>，其中p参数会显示进程id，可以直接<code>kill -9 ${pid}</code>即可释放端口资源</li>
+</ul>
 
       
 
@@ -247,7 +225,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -314,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://bshare.optimix.asia/barCode?site=weixin&url=http://vwggod.coding.io/2019-02-07-blog-collection-" alt="微信分享二维码">
+      <img src="http://bshare.optimix.asia/barCode?site=weixin&url=http://vwggod.coding.io/2019-02-07-cmd" alt="微信分享二维码">
     </div>
 </div>
 
@@ -328,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019-02-07-cmd-" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019-02-08-YAML" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          常用命令集
+          初识 YAML
         
       </div>
     </a>
   
   
-    <a href="/2019-02-07-about-me-" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">工作8年的自我认知</div>
+    <a href="/2019-02-07-blog-collection" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">优秀博文收藏</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -366,7 +344,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-常用命令集"><span class="toc-number">1.</span> <span class="toc-text">Linux 常用命令集</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -467,15 +445,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yaml</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
               </li>
              
               <li class="article-tag-list-item">
