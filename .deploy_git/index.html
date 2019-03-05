@@ -161,13 +161,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/05/图说设计模式/">浅谈设计模式</a>
+      <a class="article-title" href="/2019/03/05/图说设计模式/">初识设计模式</a>
     </h1>
   
 
         
         <a href="/2019/03/05/图说设计模式/" class="archive-article-date">
-		<time datetime="2019-03-05T12:31:32.000Z" itemprop="datePublished">
+		<time datetime="2019-03-05T12:31:00.000Z" itemprop="datePublished">
   		<i class="icon-calendar icon"></i>
   		
   		
@@ -181,38 +181,36 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>参考资料：<br><a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p>
+<p>参考资料：<a href="https://design-patterns.readthedocs.io/zh_CN/latest/index.html" target="_blank" rel="noopener">图说设计模式</a></p>
 </blockquote>
-<h2 id="初识设计模式"><a href="#初识设计模式" class="headerlink" title="初识设计模式"></a>初识设计模式</h2><p>软件模式是将模式的一般概念应用于软件开发领域，即软件开发的 总体指导思路或参照样板。软件模式并非仅限于设计模式，还包括 架构模式、分析模式和过程模式等，实际上，在软件生存期的每一 个阶段都存在着一些被认同的模式。</p>
-<h2 id="认识UML类图和时序图"><a href="#认识UML类图和时序图" class="headerlink" title="认识UML类图和时序图"></a>认识UML类图和时序图</h2><p><strong>UML（Unified Modeling Language）</strong> 统一建模语言是非专利的第三代建模和规约语言。UML是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。UML展现了一系列最佳工程实践，这些最佳实践在对大规模，复杂系统进行建模方面，特别是在软件架构层次已经被验证有效。</p>
-<p><em>如下是 UML三大模型和 10 种 UML图：</em></p>
+<h2 id="初识设计模式"><a href="#初识设计模式" class="headerlink" title="初识设计模式"></a>初识设计模式</h2><p>软件模式是将模式的一般概念应用于软件开发领域，即软件开发的 总体指导思路或参照样板。软件模式并非仅限于设计模式，还包括 架构模式、分析模式和过程模式等，实际上，在软件生存期的每一个阶段都存在着一些被认同的模式。</p>
+<h2 id="认识UML类图和时序图"><a href="#认识UML类图和时序图" class="headerlink" title="认识UML类图和时序图"></a>认识UML类图和时序图</h2><h4 id="UML（Unified-Modeling-Language）"><a href="#UML（Unified-Modeling-Language）" class="headerlink" title="UML（Unified Modeling Language）"></a>UML（Unified Modeling Language）</h4><p>统一建模语言是非专利的第三代建模和规约语言。UML是一种开放的方法，用于说明、可视化、构建和编写一个正在开发的、面向对象的、软件密集系统的制品的开放方法。UML展现了一系列最佳工程实践，这些最佳实践在对大规模，复杂系统进行建模方面，特别是在软件架构层次已经被验证有效。<em>如下是UML三大模型和10种UML图：</em></p>
 <ul>
 <li><p><strong>功能模型</strong>：从用户的角度展示系统的功能，包括用例图等。</p>
 <blockquote>
-<p><strong>用例图</strong>：描述角色以及角色与用例之间的连接关系。<br><br><strong>构件图</strong>：描述代码构件的物理结构以及各种构建之间的依赖关系。<br><br><strong>部署图</strong>：描述建模系统的物理部署。<br></p>
+<p><strong>用例图</strong>：描述角色以及角色与用例之间的连接关系。<br><strong>构件图</strong>：描述代码构件的物理结构以及各种构建之间的依赖关系。<br><strong>部署图</strong>：描述建模系统的物理部署。</p>
 </blockquote>
 </li>
 <li><p><strong>对象模型</strong>：采用对象，属性，操作，关联等概念展示系统的结构和基础，包括类图、对象图等。</p>
 <blockquote>
-<p><strong>类图</strong>：描述系统中的类，以及各个类之间的关系的静态视图。<br><br><strong>对象图</strong>：描述的不是类之间的关系，而是对象之间的关系。<br><br><strong>包图</strong>：描述系统的分层结构，由包或类组成，表示包与包之间的关系。<br></p>
+<p><strong>类图</strong>：描述系统中的类，以及各个类之间的关系的静态视图。<br><strong>对象图</strong>：描述的不是类之间的关系，而是对象之间的关系。<br><strong>包图</strong>：描述系统的分层结构，由包或类组成，表示包与包之间的关系。</p>
 </blockquote>
 </li>
 <li><p><strong>动态模型</strong>：展现系统的内部行为。包括序列图，活动图，状态图。</p>
 <blockquote>
-<p><strong>活动图</strong>：描述用例要求所要进行的活动，以及活动间的约束关系，有利于识别并行活动。<br><br><strong>状态图</strong>：描述类的对象所有可能的状态，以及事件发生时状态的转移条件。<br><br><strong>时序图</strong>：描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。<br><br><strong>协作图</strong>：描述对象间的动态上下级合作关系。<br></p>
+<p><strong>活动图</strong>：描述用例要求所要进行的活动，以及活动间的约束关系，有利于识别并行活动。<br><strong>状态图</strong>：描述类的对象所有可能的状态，以及事件发生时状态的转移条件。<br><strong>时序图</strong>：描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。<br><strong>协作图</strong>：描述对象间的动态上下级合作关系。</p>
 </blockquote>
 </li>
 </ul>
-<p><strong>类图（Class Diagram）</strong> 在UML的静态机制中是一个重点，它不但是设计人员关心的核心，更是实现人员关注的核心。建模工具也主要根据类图来产生代码。类图显示了一组类、接口、协作以及他们之间的关系。在UML中问题域最终要被逐步转化，通过类来建模，通过编程语言构建这些类从而实现系统。</p>
+<h4 id="类图（Class-Diagram）"><a href="#类图（Class-Diagram）" class="headerlink" title="类图（Class Diagram）"></a>类图（Class Diagram）</h4><p>类图在UML的静态机制中是一个重点，它不但是设计人员关心的核心，更是实现人员关注的核心。建模工具也主要根据类图来产生代码。类图显示了一组类、接口、协作以及他们之间的关系。在UML中问题域最终要被逐步转化，通过类来建模，通过编程语言构建这些类从而实现系统。</p>
 <ul>
-<li>类之间的关系<blockquote>
-<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）<br><br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–&lt;&gt;）；<br><br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；<br></p>
+<li><strong> 类图关系的表示</strong><blockquote>
+<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）；<br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–&lt;&gt;）；<br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；</p>
 </blockquote>
 </li>
 </ul>
-<p><strong>时序图（Sequence Diagram）</strong> 又名序列图、循序图，是一种UML交互图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。</p>
-<p><strong>推荐画图工具 PlantUML</strong></p>
-<ul>
+<h4 id="时序图（Sequence-Diagram）"><a href="#时序图（Sequence-Diagram）" class="headerlink" title="时序图（Sequence Diagram）"></a>时序图（Sequence Diagram）</h4><p>时序图又名序列图、循序图，是一种UML交互图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。</p>
+<h4 id="推荐画图工具-PlantUML"><a href="#推荐画图工具-PlantUML" class="headerlink" title="推荐画图工具 PlantUML"></a>推荐画图工具 PlantUML</h4><ul>
 <li><p>PlantUML in a nutshell : 开源、伪代码画图、支持很多集成环境插件（其中包含markdown、eclipse等）</p>
 </li>
 <li><p><img src="/images/pasted-1.png" alt="upload successful"></p>
@@ -227,7 +225,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">design patterns</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
@@ -274,7 +294,7 @@
 
         
         <a href="/2019/02/08/YAML/" class="archive-article-date">
-		<time datetime="2019-02-08T07:28:19.000Z" itemprop="datePublished">
+		<time datetime="2019-02-08T07:28:00.000Z" itemprop="datePublished">
   		<i class="icon-calendar icon"></i>
   		
   		
@@ -1159,11 +1179,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">blog</a>
+                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">自我认知</a>
+                <a href="javascript:void(0)" class="js-tag color5">blog</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,6 +1204,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
               </li>
             
             <div class="clearfix"></div>
