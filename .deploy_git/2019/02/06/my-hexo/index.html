@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="路漫漫其修远兮，吾将上下而求索！">
 <meta property="og:description" content="Hexo博客搭建操作整理   项目 简介 链接     驱动引擎 Hexo官网 Hexo   服务器 Cloud Studio（对hexo-admin支持不好） 基于 Cloud Studio + Hexo + 一键部署 创建个人博客   服务器 腾讯开发者平台的Pages服务（太慢） 基于 Cloud Studio + Hexo + Pages服务 创建个人博客   服务器 个人服务器（推荐，支">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-06T05:04:55.346Z">
+<meta property="og:updated_time" content="2019-03-06T08:43:17.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建全过程">
 <meta name="twitter:description" content="Hexo博客搭建操作整理   项目 简介 链接     驱动引擎 Hexo官网 Hexo   服务器 Cloud Studio（对hexo-admin支持不好） 基于 Cloud Studio + Hexo + 一键部署 创建个人博客   服务器 腾讯开发者平台的Pages服务（太慢） 基于 Cloud Studio + Hexo + Pages服务 创建个人博客   服务器 个人服务器（推荐，支">
@@ -285,6 +285,8 @@
 <h5 id="坑：hexo-deploy-部署时总是提示输入用户名和密码"><a href="#坑：hexo-deploy-部署时总是提示输入用户名和密码" class="headerlink" title="坑：hexo deploy 部署时总是提示输入用户名和密码"></a>坑：hexo deploy 部署时总是提示输入用户名和密码</h5><p>调整deploy的设置，可参考如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: hexo deploy to git for master </span><br><span class="line">  repo:</span><br><span class="line">    #github: &lt;repository url&gt;,[branch]</span><br><span class="line">    #coding: https://git.dev.tencent.com/taogejiang_study/blog.git,master ### 此种设置部署时需要提供用户名和密码</span><br><span class="line">    coding: git@git.dev.tencent.com:taogejiang_study/blog.git,master ###此种设置可免密</span><br></pre></td></tr></table></figure></p>
 <h5 id="坑：hexo-admin-部署时报ENOENT错误"><a href="#坑：hexo-admin-部署时报ENOENT错误" class="headerlink" title="坑：hexo admin 部署时报ENOENT错误"></a>坑：hexo admin 部署时报ENOENT错误</h5><p>调整deploy的_config.yml的设置，可参考如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># hexo-admin authentification</span><br><span class="line">admin:</span><br><span class="line"> deployCommand: ./shell/hexo_deploy.sh ##需要加可执行权限</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat ./shell/hexo_deploy.sh</span><br><span class="line">#!/usr/bin/env sh</span><br><span class="line">cd ~/blog.hexo/shell</span><br><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<h5 id="坑：hexo-pdf-插件不显示问题"><a href="#坑：hexo-pdf-插件不显示问题" class="headerlink" title="坑：hexo pdf 插件不显示问题"></a>坑：hexo pdf 插件不显示问题</h5><p>在安装完成hexo-pdf插件，浏览器无法显示，需要在电脑上安装pdf软件，建议安装<a href="https://helpx.adobe.com/cn/reader.html" target="_blank" rel="noopener">Acrobat Reader DC</a>；如果成功安装完成后，还是无法显示，需要调整ie浏览器设置中点击”管理加载项”，启用Adobe PDF reader即可。</p>
+
       
 
       
@@ -407,18 +409,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/07/about-me/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/02/06/gfm/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          工作8年的自我认知
+          GitHub Flavored Markdown (GFM)
         
       </div>
     </a>
   
   
-    <a href="/2019/02/06/gfm/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">GitHub Flavored Markdown (GFM)</div>
+    <a href="/2019/02/05/hello-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello Hexo</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -445,7 +447,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo博客搭建操作整理"><span class="toc-number">1.</span> <span class="toc-text">Hexo博客搭建操作整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo博客搭建踩过的坑"><span class="toc-number">2.</span> <span class="toc-text">Hexo博客搭建踩过的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：版本重置或文件名称更新时，文章部分连接失效404"><span class="toc-number">2.0.1.</span> <span class="toc-text">坑：版本重置或文件名称更新时，文章部分连接失效404</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：hexo-deploy-部署时总是提示输入用户名和密码"><span class="toc-number">2.0.2.</span> <span class="toc-text">坑：hexo deploy 部署时总是提示输入用户名和密码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：hexo-admin-部署时报ENOENT错误"><span class="toc-number">2.0.3.</span> <span class="toc-text">坑：hexo admin 部署时报ENOENT错误</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo博客搭建操作整理"><span class="toc-number">1.</span> <span class="toc-text">Hexo博客搭建操作整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo博客搭建踩过的坑"><span class="toc-number">2.</span> <span class="toc-text">Hexo博客搭建踩过的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：版本重置或文件名称更新时，文章部分连接失效404"><span class="toc-number">2.0.1.</span> <span class="toc-text">坑：版本重置或文件名称更新时，文章部分连接失效404</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：hexo-deploy-部署时总是提示输入用户名和密码"><span class="toc-number">2.0.2.</span> <span class="toc-text">坑：hexo deploy 部署时总是提示输入用户名和密码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：hexo-admin-部署时报ENOENT错误"><span class="toc-number">2.0.3.</span> <span class="toc-text">坑：hexo admin 部署时报ENOENT错误</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#坑：hexo-pdf-插件不显示问题"><span class="toc-number">2.0.4.</span> <span class="toc-text">坑：hexo pdf 插件不显示问题</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -546,10 +548,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yaml</a>
               </li>
              
@@ -566,6 +564,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -578,11 +580,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">plantuml</a>
               </li>
             
             <div class="clearfix"></div>

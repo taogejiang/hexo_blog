@@ -9,20 +9,21 @@
   <title>初识设计模式 | 路漫漫其修远兮，吾将上下而求索！</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="参考资料：图说设计模式  初识设计模式软件模式是将模式的一般概念应用于软件开发领域，即软件开发的总体指导思路或参照样板。软件模式并非仅限于设计模式，还包括架构模式、分析模式和过程模式等，实际上，在软件生存期的每一个阶段都存在着一些被认同的模式。 认识UML类图和时序图UML（Unified Modeling Language）统一建模语言是非专利的第三代建模和规约语言。UML是一种开放的方法，用">
-<meta name="keywords" content="design patterns">
+<meta name="keywords" content="design patterns,uml,plantuml">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识设计模式">
 <meta property="og:url" content="http://blog.taogejiang.cn:4000/2019/03/05/图说设计模式/index.html">
 <meta property="og:site_name" content="路漫漫其修远兮，吾将上下而求索！">
 <meta property="og:description" content="参考资料：图说设计模式  初识设计模式软件模式是将模式的一般概念应用于软件开发领域，即软件开发的总体指导思路或参照样板。软件模式并非仅限于设计模式，还包括架构模式、分析模式和过程模式等，实际上，在软件生存期的每一个阶段都存在着一些被认同的模式。 认识UML类图和时序图UML（Unified Modeling Language）统一建模语言是非专利的第三代建模和规约语言。UML是一种开放的方法，用">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKhEIImkLd3aSaZDIm7o0G00">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCAYufIamkKKZEIImkLdYnTndNY_PLBnRs05aAUderTY0X1Qkdw-Ozxzlmj7NpyysxkPvkw7-sSIyU1SMbPGgwka0fX4ghPvjdF-sP1bNmOk-w5yrz2hf5cUaP9RfQ27LMptUtF9tG0L6cyNJFhYVxvhxOEktvh9ONZRE04ffSJ_idFkrQyMpEBl9qhrtsVCfyeBk1pePxqqe1eWwgxycEBS-cRtlMi1ok76fJliBp_hNFToq7Qe2O1miFgAhI0bs55xjMFzczzyNwHg0YeFIBnYbGHGwfUId000S0">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/POyn2iCm34LtdK8No0L2CB6T4nHAPnDh26qZAZk5tZwIMsWWYmU_hwUliTGaTNi-8CsL1Q-51Ep1pg7lSU8RoztWyawLq8Ct4deS1fo5zEz2hurAHUV-iG31Ol4iY12n-neCJBmIP1qN_YWBZUdUdpIs3LaJ1tLhO1tDtiOFzKPQivwp0m00">
 <meta property="og:image" content="http://blog.taogejiang.cn:4000/images/pasted-1.png">
-<meta property="og:updated_time" content="2019-03-06T02:42:33.634Z">
+<meta property="og:updated_time" content="2019-03-06T08:37:05.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识设计模式">
 <meta name="twitter:description" content="参考资料：图说设计模式  初识设计模式软件模式是将模式的一般概念应用于软件开发领域，即软件开发的总体指导思路或参照样板。软件模式并非仅限于设计模式，还包括架构模式、分析模式和过程模式等，实际上，在软件生存期的每一个阶段都存在着一些被认同的模式。 认识UML类图和时序图UML（Unified Modeling Language）统一建模语言是非专利的第三代建模和规约语言。UML是一种开放的方法，用">
-<meta name="twitter:image" content="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKhEIImkLd3aSaZDIm7o0G00">
+<meta name="twitter:image" content="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCAYufIamkKKZEIImkLdYnTndNY_PLBnRs05aAUderTY0X1Qkdw-Ozxzlmj7NpyysxkPvkw7-sSIyU1SMbPGgwka0fX4ghPvjdF-sP1bNmOk-w5yrz2hf5cUaP9RfQ27LMptUtF9tG0L6cyNJFhYVxvhxOEktvh9ONZRE04ffSJ_idFkrQyMpEBl9qhrtsVCfyeBk1pePxqqe1eWwgxycEBS-cRtlMi1ok76fJliBp_hNFToq7Qe2O1miFgAhI0bs55xjMFzczzyNwHg0YeFIBnYbGHGwfUId000S0">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -206,19 +207,31 @@
 </ul>
 <h4 id="类图（Class-Diagram）"><a href="#类图（Class-Diagram）" class="headerlink" title="类图（Class Diagram）"></a>类图（Class Diagram）</h4><p>类图在UML的静态机制中是一个重点，它不但是设计人员关心的核心，更是实现人员关注的核心。建模工具也主要根据类图来产生代码。类图显示了一组类、接口、协作以及他们之间的关系。在UML中问题域最终要被逐步转化，通过类来建模，通过编程语言构建这些类从而实现系统。</p>
 <ul>
-<li><strong> 类图关系的表示</strong><blockquote>
-<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）；<br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–&lt;&gt;）；<br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；</p>
+<li><p><strong>类图关系的表示</strong></p>
+<blockquote>
+<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）；<br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–o）；<br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；</p>
 </blockquote>
 </li>
+<li><p><strong>示例</strong><br><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCAYufIamkKKZEIImkLdYnTndNY_PLBnRs05aAUderTY0X1Qkdw-Ozxzlmj7NpyysxkPvkw7-sSIyU1SMbPGgwka0fX4ghPvjdF-sP1bNmOk-w5yrz2hf5cUaP9RfQ27LMptUtF9tG0L6cyNJFhYVxvhxOEktvh9ONZRE04ffSJ_idFkrQyMpEBl9qhrtsVCfyeBk1pePxqqe1eWwgxycEBS-cRtlMi1ok76fJliBp_hNFToq7Qe2O1miFgAhI0bs55xjMFzczzyNwHg0YeFIBnYbGHGwfUId000S0"></p>
+</li>
 </ul>
-<p><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKhEIImkLd3aSaZDIm7o0G00"></p>
 <h4 id="时序图（Sequence-Diagram）"><a href="#时序图（Sequence-Diagram）" class="headerlink" title="时序图（Sequence Diagram）"></a>时序图（Sequence Diagram）</h4><p>时序图又名序列图、循序图，是一种UML交互图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。</p>
+<ul>
+<li><p><strong>组成元素</strong></p>
+<blockquote>
+<p><strong>角色（Actor）</strong>：系统角色，可以是人或者其他系统，子系统。<br><strong>对象（Object）</strong>：对象代表时序图中的对象在交互中所扮演的角色，位于时序图顶部和对象代表类角色。<br><strong>生命线（Lifeline）</strong>：生命线代表时序图中的对象在一段时期内的存在。<br><strong>控制焦点（Activation）</strong>：控制焦点代表时序图中的对象执行一项操作的时期，在时序图中每条生命线上的窄的矩形代表活动期。<br><strong>消息（Message）</strong>：消息是定义交互和协作中交换信息的类，用于对实体间的通信内容建模，信息用于在实体间传递信息。</p>
+</blockquote>
+</li>
+<li><p><strong>示例</strong><br><img src="https://www.plantuml.com/plantuml/svg/POyn2iCm34LtdK8No0L2CB6T4nHAPnDh26qZAZk5tZwIMsWWYmU_hwUliTGaTNi-8CsL1Q-51Ep1pg7lSU8RoztWyawLq8Ct4deS1fo5zEz2hurAHUV-iG31Ol4iY12n-neCJBmIP1qN_YWBZUdUdpIs3LaJ1tLhO1tDtiOFzKPQivwp0m00"></p>
+</li>
+</ul>
 <h4 id="推荐画图工具-PlantUML"><a href="#推荐画图工具-PlantUML" class="headerlink" title="推荐画图工具 PlantUML"></a>推荐画图工具 PlantUML</h4><ul>
 <li><p>PlantUML in a nutshell : 开源、伪代码画图、支持很多集成环境插件（其中包含markdown、eclipse等）</p>
 </li>
 <li><p><img src="/images/pasted-1.png" alt="upload successful"></p>
 </li>
-<li>更多详见 <a href="http://plantuml.com" target="_blank" rel="noopener">http://plantuml.com</a></li>
+<li><a href="https://dev.tencent.com/s/34359f66-1ca2-4182-b8d6-727e1d3bcd96" target="_blank" rel="noopener">PlantUML中文帮助手册.pdf</a></li>
+<li><a href="http://plantuml.com" target="_blank" rel="noopener">更多详见http://plantuml.com</a></li>
 </ul>
 
       
@@ -255,6 +268,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">design patterns</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">plantuml</a>
         		</li>
       		
 		</ul>
@@ -334,15 +355,6 @@
 
   
 <nav id="article-nav">
-  
-    <a href="/2019/03/06/PlantUML中文手册/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          PlantUML中文手册
-        
-      </div>
-    </a>
   
   
     <a href="/2019/02/08/YAML/" id="article-nav-older" class="article-nav-link-wrap">
@@ -474,10 +486,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yaml</a>
               </li>
              
@@ -494,6 +502,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -506,11 +518,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">plantuml</a>
               </li>
             
             <div class="clearfix"></div>

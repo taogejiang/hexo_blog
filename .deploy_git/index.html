@@ -154,103 +154,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-PlantUML中文手册" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/06/PlantUML中文手册/">PlantUML中文手册</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/06/PlantUML中文手册/" class="archive-article-date">
-		<time datetime="2019-03-06T05:37:00.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		今天
-  		
-  	</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-
-	<div class="row">
-    <embed src="../doc/PlantUMLLanguageReferenceGuideZH.1851971531.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/06/PlantUML中文手册/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-图说设计模式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -301,19 +204,31 @@
 </ul>
 <h4 id="类图（Class-Diagram）"><a href="#类图（Class-Diagram）" class="headerlink" title="类图（Class Diagram）"></a>类图（Class Diagram）</h4><p>类图在UML的静态机制中是一个重点，它不但是设计人员关心的核心，更是实现人员关注的核心。建模工具也主要根据类图来产生代码。类图显示了一组类、接口、协作以及他们之间的关系。在UML中问题域最终要被逐步转化，通过类来建模，通过编程语言构建这些类从而实现系统。</p>
 <ul>
-<li><strong> 类图关系的表示</strong><blockquote>
-<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）；<br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–&lt;&gt;）；<br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；</p>
+<li><p><strong>类图关系的表示</strong></p>
+<blockquote>
+<p><strong>泛化关系(generalization)</strong>：类的继承关系，用一条带空心箭头的实线表示（–|&gt;）；<br><strong>实现关系(realize)</strong>：类的接口实现关系，用一条带空心箭头的虚线表示（..|&gt;）；<br><strong>聚合关系(aggregation)</strong>：实体与对象之间的关系，用一条带空心菱形箭头的直线表示（–o）；<br><strong>组合关系(composition)</strong>：强依赖的特殊聚合关系，用一条带实心菱形箭头的直线表示（–*）；<br><strong>关联关系(association)</strong>：成员变量与对象之间的关系，用一条直线表示（–）；<br><strong>依赖关系(dependency)</strong>：一种临时性的运行时关系，用一套带箭头的虚线表示（..&gt;）；</p>
 </blockquote>
 </li>
+<li><p><strong>示例</strong><br><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCAYufIamkKKZEIImkLdYnTndNY_PLBnRs05aAUderTY0X1Qkdw-Ozxzlmj7NpyysxkPvkw7-sSIyU1SMbPGgwka0fX4ghPvjdF-sP1bNmOk-w5yrz2hf5cUaP9RfQ27LMptUtF9tG0L6cyNJFhYVxvhxOEktvh9ONZRE04ffSJ_idFkrQyMpEBl9qhrtsVCfyeBk1pePxqqe1eWwgxycEBS-cRtlMi1ok76fJliBp_hNFToq7Qe2O1miFgAhI0bs55xjMFzczzyNwHg0YeFIBnYbGHGwfUId000S0"></p>
+</li>
 </ul>
-<p><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKhEIImkLd3aSaZDIm7o0G00"></p>
 <h4 id="时序图（Sequence-Diagram）"><a href="#时序图（Sequence-Diagram）" class="headerlink" title="时序图（Sequence Diagram）"></a>时序图（Sequence Diagram）</h4><p>时序图又名序列图、循序图，是一种UML交互图。它通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作。</p>
+<ul>
+<li><p><strong>组成元素</strong></p>
+<blockquote>
+<p><strong>角色（Actor）</strong>：系统角色，可以是人或者其他系统，子系统。<br><strong>对象（Object）</strong>：对象代表时序图中的对象在交互中所扮演的角色，位于时序图顶部和对象代表类角色。<br><strong>生命线（Lifeline）</strong>：生命线代表时序图中的对象在一段时期内的存在。<br><strong>控制焦点（Activation）</strong>：控制焦点代表时序图中的对象执行一项操作的时期，在时序图中每条生命线上的窄的矩形代表活动期。<br><strong>消息（Message）</strong>：消息是定义交互和协作中交换信息的类，用于对实体间的通信内容建模，信息用于在实体间传递信息。</p>
+</blockquote>
+</li>
+<li><p><strong>示例</strong><br><img src="https://www.plantuml.com/plantuml/svg/POyn2iCm34LtdK8No0L2CB6T4nHAPnDh26qZAZk5tZwIMsWWYmU_hwUliTGaTNi-8CsL1Q-51Ep1pg7lSU8RoztWyawLq8Ct4deS1fo5zEz2hurAHUV-iG31Ol4iY12n-neCJBmIP1qN_YWBZUdUdpIs3LaJ1tLhO1tDtiOFzKPQivwp0m00"></p>
+</li>
+</ul>
 <h4 id="推荐画图工具-PlantUML"><a href="#推荐画图工具-PlantUML" class="headerlink" title="推荐画图工具 PlantUML"></a>推荐画图工具 PlantUML</h4><ul>
 <li><p>PlantUML in a nutshell : 开源、伪代码画图、支持很多集成环境插件（其中包含markdown、eclipse等）</p>
 </li>
 <li><p><img src="/images/pasted-1.png" alt="upload successful"></p>
 </li>
-<li>更多详见 <a href="http://plantuml.com" target="_blank" rel="noopener">http://plantuml.com</a></li>
+<li><a href="https://dev.tencent.com/s/34359f66-1ca2-4182-b8d6-727e1d3bcd96" target="_blank" rel="noopener">PlantUML中文帮助手册.pdf</a></li>
+<li><a href="http://plantuml.com" target="_blank" rel="noopener">更多详见http://plantuml.com</a></li>
 </ul>
 
       
@@ -329,6 +244,14 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">design patterns</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">plantuml</a>
         		</li>
       		
 		</ul>
@@ -810,6 +733,100 @@
 
 
   
+    <article id="post-gfm" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/06/gfm/">GitHub Flavored Markdown (GFM)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/06/gfm/" class="archive-article-date">
+		<time datetime="2019-02-06T09:14:04.000Z" itemprop="datePublished">
+  		<i class="icon-calendar icon"></i>
+  		
+  		
+  		2019-02-06
+  		
+  	</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>鼻祖：<a href="https://github.github.com/gfm/" target="_blank" rel="noopener">https://github.github.com/gfm/</a></p>
+<p>腾讯云开发者平台：<a href="https://dev.tencent.com/help/doc/markdown" target="_blank" rel="noopener">https://dev.tencent.com/help/doc/markdown</a></p>
+<p>美人鱼（like Visio but simple）：<a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">https://mermaidjs.github.io/</a></p>
+<p>开源在线 Markdown 编辑器：<a href="https://pandao.github.io/editor.md/" target="_blank" rel="noopener">https://pandao.github.io/editor.md/</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/06/gfm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-my-hexo" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -942,6 +959,8 @@
 <h5 id="坑：hexo-deploy-部署时总是提示输入用户名和密码"><a href="#坑：hexo-deploy-部署时总是提示输入用户名和密码" class="headerlink" title="坑：hexo deploy 部署时总是提示输入用户名和密码"></a>坑：hexo deploy 部署时总是提示输入用户名和密码</h5><p>调整deploy的设置，可参考如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  message: hexo deploy to git for master </span><br><span class="line">  repo:</span><br><span class="line">    #github: &lt;repository url&gt;,[branch]</span><br><span class="line">    #coding: https://git.dev.tencent.com/taogejiang_study/blog.git,master ### 此种设置部署时需要提供用户名和密码</span><br><span class="line">    coding: git@git.dev.tencent.com:taogejiang_study/blog.git,master ###此种设置可免密</span><br></pre></td></tr></table></figure></p>
 <h5 id="坑：hexo-admin-部署时报ENOENT错误"><a href="#坑：hexo-admin-部署时报ENOENT错误" class="headerlink" title="坑：hexo admin 部署时报ENOENT错误"></a>坑：hexo admin 部署时报ENOENT错误</h5><p>调整deploy的_config.yml的设置，可参考如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># hexo-admin authentification</span><br><span class="line">admin:</span><br><span class="line"> deployCommand: ./shell/hexo_deploy.sh ##需要加可执行权限</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat ./shell/hexo_deploy.sh</span><br><span class="line">#!/usr/bin/env sh</span><br><span class="line">cd ~/blog.hexo/shell</span><br><span class="line">hexo clean &amp;&amp; hexo deploy</span><br></pre></td></tr></table></figure>
+<h5 id="坑：hexo-pdf-插件不显示问题"><a href="#坑：hexo-pdf-插件不显示问题" class="headerlink" title="坑：hexo pdf 插件不显示问题"></a>坑：hexo pdf 插件不显示问题</h5><p>在安装完成hexo-pdf插件，浏览器无法显示，需要在电脑上安装pdf软件，建议安装<a href="https://helpx.adobe.com/cn/reader.html" target="_blank" rel="noopener">Acrobat Reader DC</a>；如果成功安装完成后，还是无法显示，需要调整ie浏览器设置中点击”管理加载项”，启用Adobe PDF reader即可。</p>
+
       
 
       
@@ -984,100 +1003,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/06/my-hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-gfm" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/06/gfm/">GitHub Flavored Markdown (GFM)</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/06/gfm/" class="archive-article-date">
-		<time datetime="2019-02-06T09:14:04.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-06
-  		
-  	</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>鼻祖：<a href="https://github.github.com/gfm/" target="_blank" rel="noopener">https://github.github.com/gfm/</a></p>
-<p>腾讯云开发者平台：<a href="https://dev.tencent.com/help/doc/markdown" target="_blank" rel="noopener">https://dev.tencent.com/help/doc/markdown</a></p>
-<p>美人鱼（like Visio but simple）：<a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">https://mermaidjs.github.io/</a></p>
-<p>开源在线 Markdown 编辑器：<a href="https://pandao.github.io/editor.md/" target="_blank" rel="noopener">https://pandao.github.io/editor.md/</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/06/gfm/">展开全文 >></a>
         </p>
       
 
@@ -1288,10 +1213,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">yaml</a>
               </li>
              
@@ -1308,6 +1229,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -1320,11 +1245,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">design patterns</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">plantuml</a>
               </li>
             
             <div class="clearfix"></div>
