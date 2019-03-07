@@ -1020,7 +1020,7 @@ pre .css ~ * .id {
       #header .header-nav .social a.rss:hover {
         border: 1px solid #cf5d0f; }
     #header .header-nav .social a.github {
-      background: #1b1b1b;
+      background: #0a0a0a;
       border: 1px solid #afb6ca; }
       #header .header-nav .social a.github:hover {
         border: 1px solid #909ab6; }
