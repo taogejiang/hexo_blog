@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://blog.taogejiang.cn:4000">
-  <title>Archives | 路漫漫其修远兮，吾将上下而求索！</title>
+  <title>初识设计模式之简单工厂模式 | 路漫漫其修远兮，吾将上下而求索！</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="taogejiang blog hexo yilia">
+  <meta name="description" content="前序：初识设计模式  需求有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。 设计使用面向对象思维，先拆分对象：按钮、按钮1、按钮2…抽象出共同点：功能一致定制化不同点：不同参数，参数决定按钮 类图 时序图 代码123456789101112131415161718192021222324252627282930313233343536373839404142434">
 <meta name="keywords" content="taogejiang blog hexo yilia">
-<meta property="og:type" content="website">
-<meta property="og:title" content="路漫漫其修远兮，吾将上下而求索！">
-<meta property="og:url" content="http://blog.taogejiang.cn:4000/archives/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识设计模式之简单工厂模式">
+<meta property="og:url" content="http://blog.taogejiang.cn:4000/2019/03/12/SimpleFactoryPattern/index.html">
 <meta property="og:site_name" content="路漫漫其修远兮，吾将上下而求索！">
-<meta property="og:description" content="taogejiang blog hexo yilia">
+<meta property="og:description" content="前序：初识设计模式  需求有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。 设计使用面向对象思维，先拆分对象：按钮、按钮1、按钮2…抽象出共同点：功能一致定制化不同点：不同参数，参数决定按钮 类图 时序图 代码123456789101112131415161718192021222324252627282930313233343536373839404142434">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/lPAz2i8m4CTdynGP5Q4F81rg1i5DS2n5pZI6I9kKv2gKsdUtQXeLHGN1zVB_-76vn25OhCk2y0ASesjLLeLO04TZcnKW2gjfckxX0BEjsGajermu9VMckZwww9KbosXBHjEsJqV5kuDHEIr1wV4QhT8opIXOwIQayxNU_Q79gtpuScLDNdEaKY2h4SsGJh6fn3bRwTwt0oveqBul66JNXWkrqJxx1kj5ymzXWypZFgVzXjUHu8gFKHIe7Y7PTv3ilv2CaB34k1_xZoK1-duutCPvzkhMI29qtb_m2G00">
+<meta property="og:image" content="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCBialKiXDpCpZihKrr7ksOEUptdNFD-v-Eg_xHT_sf_tJdgxV-NJNb6SzdIydhGEoNsnSQ6lB1LAle6kdu0RMNccba9vQubHQKfAVfr5IMP2ggS05bL7GZLOkIas91QeDACfFAKqkSLImKiXCKm0fKyWiLaZEB4ekpKaiue9B8tI0RR5IA4ejAItAK_24gk12DZiffpGLoN0dLCEB2qiJYrAvu9986d2PRMjhfFUiS_cBXJt8Ndu-g-NPj9tFDaz5yZjCZvL2VXxKxq1_EwJcfG335G00">
+<meta property="og:updated_time" content="2019-03-12T09:09:47.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="路漫漫其修远兮，吾将上下而求索！">
-<meta name="twitter:description" content="taogejiang blog hexo yilia">
+<meta name="twitter:title" content="初识设计模式之简单工厂模式">
+<meta name="twitter:description" content="前序：初识设计模式  需求有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。 设计使用面向对象思维，先拆分对象：按钮、按钮1、按钮2…抽象出共同点：功能一致定制化不同点：不同参数，参数决定按钮 类图 时序图 代码123456789101112131415161718192021222324252627282930313233343536373839404142434">
+<meta name="twitter:image" content="https://www.plantuml.com/plantuml/svg/lPAz2i8m4CTdynGP5Q4F81rg1i5DS2n5pZI6I9kKv2gKsdUtQXeLHGN1zVB_-76vn25OhCk2y0ASesjLLeLO04TZcnKW2gjfckxX0BEjsGajermu9VMckZwww9KbosXBHjEsJqV5kuDHEIr1wV4QhT8opIXOwIQayxNU_Q79gtpuScLDNdEaKY2h4SsGJh6fn3bRwTwt0oveqBul66JNXWkrqJxx1kj5ymzXWypZFgVzXjUHu8gFKHIe7Y7PTv3ilv2CaB34k1_xZoK1-duutCPvzkhMI29qtb_m2G00">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -152,24 +156,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-SimpleFactoryPattern" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      初识设计模式之简单工厂模式
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/12/SimpleFactoryPattern/" class="archive-article-date">
+
+        
+        <a href="/2019/03/12/SimpleFactoryPattern/" class="archive-article-date">
 		<time datetime="2019-03-12T07:45:12.000Z" itemprop="datePublished">
   		<i class="icon-calendar icon"></i>
   		
@@ -178,485 +177,162 @@
   		
   	</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/12/SimpleFactoryPattern/">初识设计模式之简单工厂模式</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>前序：<a href="/2019/03/05/design-patterns/">初识设计模式</a></p>
+</blockquote>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。</p>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><p>使用面向对象思维，先拆分对象：按钮、按钮1、按钮2…<br>抽象出共同点：功能一致<br>定制化不同点：不同参数，参数决定按钮</p>
+<h4 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h4><p><img src="https://www.plantuml.com/plantuml/svg/lPAz2i8m4CTdynGP5Q4F81rg1i5DS2n5pZI6I9kKv2gKsdUtQXeLHGN1zVB_-76vn25OhCk2y0ASesjLLeLO04TZcnKW2gjfckxX0BEjsGajermu9VMckZwww9KbosXBHjEsJqV5kuDHEIr1wV4QhT8opIXOwIQayxNU_Q79gtpuScLDNdEaKY2h4SsGJh6fn3bRwTwt0oveqBul66JNXWkrqJxx1kj5ymzXWypZFgVzXjUHu8gFKHIe7Y7PTv3ilv2CaB34k1_xZoK1-duutCPvzkhMI29qtb_m2G00"></p>
+<h4 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h4><p><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCBialKiXDpCpZihKrr7ksOEUptdNFD-v-Eg_xHT_sf_tJdgxV-NJNb6SzdIydhGEoNsnSQ6lB1LAle6kdu0RMNccba9vQubHQKfAVfr5IMP2ggS05bL7GZLOkIas91QeDACfFAKqkSLImKiXCKm0fKyWiLaZEB4ekpKaiue9B8tI0RR5IA4ejAItAK_24gk12DZiffpGLoN0dLCEB2qiJYrAvu9986d2PRMjhfFUiS_cBXJt8Ndu-g-NPj9tFDaz5yZjCZvL2VXxKxq1_EwJcfG335G00"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">package</span> design_patterns;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**   </span></span><br><span class="line"><span class="comment">* 简单工厂模式 </span></span><br><span class="line"><span class="comment">* 需求：有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactoryPattern</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Factory f = <span class="keyword">new</span> Factory();</span><br><span class="line">		f.getButton(<span class="string">"circular"</span>).onButton();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> IProduct <span class="title">getButton</span><span class="params">(String type)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(type == <span class="keyword">null</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(<span class="string">"the parameter[type] is null. "</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(type.equals(<span class="string">"circular"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> ProductA();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(type.equals(<span class="string">"square"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> ProductB();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 类名称：IProduct   </span></span><br><span class="line"><span class="comment">* 类描述： 基类，优先选择使用接口方式</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">* 类名称：ProductA   </span></span><br><span class="line"><span class="comment">* 类描述：接口的实现类A</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductA</span> <span class="keyword">implements</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"is a circular button"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">* 类名称：ProductB</span></span><br><span class="line"><span class="comment">* 类描述：接口的实现类B</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductB</span> <span class="keyword">implements</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"is a square button"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>优点：</strong>利用java的多态特性可降低耦合，对象的创建和对象本身业务逻辑分离，参数配置可灵活修改（实际项目中可通过配置文件进行控制，实现程序配置化）<br><strong>缺点：</strong>工厂类的职责过重，增加新产品时需要修改判断逻辑，业务扩展性不强，不符合<a href="https://baike.baidu.com/item/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/2828775?fr=aladdin" target="_blank" rel="noopener">开闭原则</a><br><strong>适用场景：</strong>当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节，参数化项目或产品中可使用此模式。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://bshare.optimix.asia/barCode?site=weixin&url=http://blog.taogejiang.cn:4000/2019/03/12/SimpleFactoryPattern/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/05/design-patterns/" class="archive-article-date">
-		<time datetime="2019-03-05T12:31:00.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-03-05
-  		
-  	</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/05/design-patterns/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识设计模式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/05/design-patterns/">初识设计模式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">design patterns</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">plantuml</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需求"><span class="toc-number">1.</span> <span class="toc-text">需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计"><span class="toc-number">2.</span> <span class="toc-text">设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类图"><span class="toc-number">2.0.1.</span> <span class="toc-text">类图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时序图"><span class="toc-number">2.0.2.</span> <span class="toc-text">时序图</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/08/YAML/" class="archive-article-date">
-		<time datetime="2019-02-08T07:28:00.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-08
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/08/YAML/">初识 YAML</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">yaml</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/07/cmd/" class="archive-article-date">
-		<time datetime="2019-02-07T15:01:46.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-07
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/07/cmd/">常用命令集</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/07/blog-collection/" class="archive-article-date">
-		<time datetime="2019-02-07T09:14:00.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-07
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/07/blog-collection/">优秀博文收藏</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/07/about-me/" class="archive-article-date">
-		<time datetime="2019-02-07T07:28:19.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-07
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/07/about-me/">工作8年的自我认知</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自我认知</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/essay//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/06/gfm/" class="archive-article-date">
-		<time datetime="2019-02-06T09:14:04.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-06
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/06/gfm/">GitHub Flavored Markdown (GFM)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/collection//" class="article-tag-list-link color3">收藏</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/06/my-hexo/" class="archive-article-date">
-		<time datetime="2019-02-06T09:14:04.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-06
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/06/my-hexo/">Hexo博客搭建全过程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">cloud studio</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/05/hello-hexo/" class="archive-article-date">
-		<time datetime="2019-02-05T09:14:00.000Z" itemprop="datePublished">
-  		<i class="icon-calendar icon"></i>
-  		
-  		
-  		2019-02-05
-  		
-  	</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/05/hello-hexo/">Hello Hexo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/knowledge//" class="article-tag-list-link color5">知识体系</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -679,8 +355,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -154,6 +154,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SimpleFactoryPattern" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/12/SimpleFactoryPattern/">初识设计模式之简单工厂模式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/12/SimpleFactoryPattern/" class="archive-article-date">
+		<time datetime="2019-03-12T07:45:12.000Z" itemprop="datePublished">
+  		<i class="icon-calendar icon"></i>
+  		
+  		
+  		今天
+  		
+  	</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>前序：<a href="/2019/03/05/design-patterns/">初识设计模式</a></p>
+</blockquote>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。</p>
+<h2 id="设计"><a href="#设计" class="headerlink" title="设计"></a>设计</h2><p>使用面向对象思维，先拆分对象：按钮、按钮1、按钮2…<br>抽象出共同点：功能一致<br>定制化不同点：不同参数，参数决定按钮</p>
+<h4 id="类图"><a href="#类图" class="headerlink" title="类图"></a>类图</h4><p><img src="https://www.plantuml.com/plantuml/svg/lPAz2i8m4CTdynGP5Q4F81rg1i5DS2n5pZI6I9kKv2gKsdUtQXeLHGN1zVB_-76vn25OhCk2y0ASesjLLeLO04TZcnKW2gjfckxX0BEjsGajermu9VMckZwww9KbosXBHjEsJqV5kuDHEIr1wV4QhT8opIXOwIQayxNU_Q79gtpuScLDNdEaKY2h4SsGJh6fn3bRwTwt0oveqBul66JNXWkrqJxx1kj5ymzXWypZFgVzXjUHu8gFKHIe7Y7PTv3ilv2CaB34k1_xZoK1-duutCPvzkhMI29qtb_m2G00"></p>
+<h4 id="时序图"><a href="#时序图" class="headerlink" title="时序图"></a>时序图</h4><p><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuKfCBialKiXDpCpZihKrr7ksOEUptdNFD-v-Eg_xHT_sf_tJdgxV-NJNb6SzdIydhGEoNsnSQ6lB1LAle6kdu0RMNccba9vQubHQKfAVfr5IMP2ggS05bL7GZLOkIas91QeDACfFAKqkSLImKiXCKm0fKyWiLaZEB4ekpKaiue9B8tI0RR5IA4ejAItAK_24gk12DZiffpGLoN0dLCEB2qiJYrAvu9986d2PRMjhfFUiS_cBXJt8Ndu-g-NPj9tFDaz5yZjCZvL2VXxKxq1_EwJcfG335G00"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">package</span> design_patterns;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**   </span></span><br><span class="line"><span class="comment">* 简单工厂模式 </span></span><br><span class="line"><span class="comment">* 需求：有多个按钮(功能一致，但外观不同)，希望能够实现根据传入参数生成不同的按钮对象。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactoryPattern</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Factory f = <span class="keyword">new</span> Factory();</span><br><span class="line">		f.getButton(<span class="string">"circular"</span>).onButton();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Factory</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> IProduct <span class="title">getButton</span><span class="params">(String type)</span></span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(type == <span class="keyword">null</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(<span class="string">"the parameter[type] is null. "</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(type.equals(<span class="string">"circular"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> ProductA();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(type.equals(<span class="string">"square"</span>)) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> ProductB();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 类名称：IProduct   </span></span><br><span class="line"><span class="comment">* 类描述： 基类，优先选择使用接口方式</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">* 类名称：ProductA   </span></span><br><span class="line"><span class="comment">* 类描述：接口的实现类A</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductA</span> <span class="keyword">implements</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"is a circular button"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment">* 类名称：ProductB</span></span><br><span class="line"><span class="comment">* 类描述：接口的实现类B</span></span><br><span class="line"><span class="comment">* <span class="doctag">@version</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProductB</span> <span class="keyword">implements</span> <span class="title">IProduct</span> </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onButton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		System.out.println(<span class="string">"is a square button"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>优点：</strong>利用java的多态特性可降低耦合，对象的创建和对象本身业务逻辑分离，参数配置可灵活修改（实际项目中可通过配置文件进行控制，实现程序配置化）<br><strong>缺点：</strong>工厂类的职责过重，增加新产品时需要修改判断逻辑，业务扩展性不强，不符合<a href="https://baike.baidu.com/item/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/2828775?fr=aladdin" target="_blank" rel="noopener">开闭原则</a><br><strong>适用场景：</strong>当你需要什么，只需要传入一个正确的参数，就可以获取你所需要的对象，而无须知道其创建细节，参数化项目或产品中可使用此模式。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/12/SimpleFactoryPattern/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-design-patterns" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -187,7 +264,7 @@
 <ul>
 <li><p><strong>创建型模式(Creational Pattern)</strong>：对类的实例化过程进行了抽象，能够将软件模块中对象的创建和对象的使用分离。【模块化】</p>
 <blockquote>
-<p>简单工厂模式(Simple Factory) 重要程度：4 （5为满分）<br>工厂方法模式(Factory Method) 重要程度：5<br>抽象工厂模式(Abstract Factory) 重要程度：5<br>建造者模式(Builder) 重要程度：2<br>原型模式(Prototype) 重要程度：3<br>单例模式(Singleton) 重要程度：4</p>
+<p><a href="/2019/03/12/SimpleFactoryPattern/">简单工厂模式(Simple Factory)</a> 重要程度：4 （5为满分）<br>工厂方法模式(Factory Method) 重要程度：5<br>抽象工厂模式(Abstract Factory) 重要程度：5<br>建造者模式(Builder) 重要程度：2<br>原型模式(Prototype) 重要程度：3<br>单例模式(Singleton) 重要程度：4</p>
 </blockquote>
 </li>
 <li><p><strong>结构型模式(Structural Pattern)</strong>：将类或者对象结合在一起形成更大的结构。【搭积木】</p>
